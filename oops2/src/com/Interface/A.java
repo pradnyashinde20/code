@@ -1,0 +1,34 @@
+package com.Interface;
+
+public interface  A {
+	
+	public void m1();
+	default void m3()
+	{
+		System.out.println("this is default method in interface");
+	}
+	void m2(int a,int b);
+	static void m4()
+	{
+		System.out.println("this is static method");
+	}
+	final int no=10;
+}
+class B implements A{
+	
+
+	public void m2(int a,int b) {
+		System.out.println("this method extend from class a");
+		System.out.println("final variable:"+(no+1));
+		 
+
+	}
+
+	@Override
+	public void m1() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+}

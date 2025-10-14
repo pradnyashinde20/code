@@ -1,0 +1,15 @@
+package com.service;
+
+import java.util.Set;
+
+import com.beans.Student;
+
+public interface StudentService {
+
+	boolean addNewStudent();
+
+	Set<Student> displayAll();
+
+	Student findById();
+
+}

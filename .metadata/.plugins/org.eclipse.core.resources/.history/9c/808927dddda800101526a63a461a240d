@@ -1,0 +1,24 @@
+package com.demo.dao;
+
+import java.util.Map;
+import java.util.Set;
+
+import com.demo.beans.Course;
+
+public interface CourseDao {
+
+	boolean save(String cname, int capacity);
+
+	Map<String, Integer> findAll();
+
+	int serachByName(String cname);
+
+	boolean modifyCourseCapacity(String cname, int ncap);
+
+	Set<String> findByCourseByCapacity(int capacity);
+
+	boolean modifyCourseName(String ocname, String ncname);
+
+	Map<String, Integer> sortByName();
+
+}

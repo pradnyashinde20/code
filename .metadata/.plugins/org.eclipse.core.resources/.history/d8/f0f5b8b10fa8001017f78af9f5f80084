@@ -1,0 +1,20 @@
+package com.service;
+
+import com.dao.OrderDao;
+import com.dao.OrderDaoImpl;
+
+public class OrderServiceImpl implements OrderService {
+private OrderDao odao;
+
+	public OrderServiceImpl(OrderDao odao) {
+	super();
+	this.odao =new OrderDaoImpl();
+}
+
+	@Override
+	public boolean addNewCustomer() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

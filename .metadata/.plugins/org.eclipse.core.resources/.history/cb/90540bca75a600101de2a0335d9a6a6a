@@ -1,0 +1,19 @@
+package com.dao;
+
+import java.util.Set;
+
+import com.beans.Student;
+
+public class StudentDaoImpl implements StudentDao{
+	static Set<Student>sl=new HashSet<>();
+	static{
+		sl=
+	}
+
+	@Override
+	public boolean save(Student s) {
+		// TODO Auto-generated method stub
+		return ;
+	}
+
+}

@@ -1,0 +1,40 @@
+package com.demo.test;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Set;
+
+import com.demo.service.CourseService;
+import com.demo.service.CourseServiceImpl;
+
+public class TestCourse {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		CourseService cservice= new CourseServiceImpl();
+		int choice=0;
+		do {
+			System.out.println("1. Add new Course\n 2. display all\n3. find by course name\n");
+			System.out.println("4. modify course capacity\n 5. find by course capacity\n6. modify course name\n");
+			System.out.println("7. display in sorted order of key\n 8. display  in sorted order of value\n");
+			System.out.println("9. delete by course name\n10. delete by capacity\n 11.exit\n choice: ");
+			choice=sc.nextInt();
+			
+			switch(choice) {
+			case 1->{
+				boolean status = cservice.addNewCourse();
+				if(status) {
+					System.out.println("added successfully");
+				}else {
+					System.out.println(" not added");
+				}
+			}
+			
+			case 2->{
+				Map<String,Integer>cmap=cservice.displayAll();
+				Set<String>keys = cmap.keySet();
+				keys.forEach(e->System.out.println(e+"----->"+cmap.get(e)));
+				
+			}
+			}
+		}while(choice!=11);
+	}
+}

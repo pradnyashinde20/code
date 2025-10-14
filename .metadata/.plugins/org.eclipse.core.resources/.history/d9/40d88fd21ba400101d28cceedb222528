@@ -1,0 +1,29 @@
+package com.test;
+
+import java.util.Scanner;
+
+import com.service.Studentservice;
+
+public class StudentTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+//Student s=new Student(01,"riya",90);
+Scanner sc=new Scanner(System.in);
+int ch;
+
+	Studentservice s=new Studentservice();	
+	 do {
+		 System.out.println("1.add student data/n2.display student data");
+	 
+	 ch=sc.nextInt();
+	 switch(ch)
+	 {
+	 case 1:
+		 int data[]=s.addNewStudent();
+		 
+	 }
+		 
+	 }while(ch!=3);
+	}
+}

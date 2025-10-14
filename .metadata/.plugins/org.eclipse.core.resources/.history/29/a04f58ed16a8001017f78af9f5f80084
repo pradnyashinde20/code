@@ -1,0 +1,58 @@
+package com.test;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Set;
+
+import com.beans.Customer;
+import com.beans.Item;
+import com.service.OrderService;
+import com.service.OrderServiceImpl;
+
+
+public class OrderTest {
+
+	public static void main(String[] args) {
+		OrderService order=new OrderServiceImpl();
+		Scanner sc=new Scanner(System.in);
+		int choice=0;
+		
+		
+	do {
+		System.out.println("1.add new customer\n 2.display all \n 3.delete customer");
+		System.out.println("choice>>");
+		choice=sc.nextInt();
+		switch(choice)
+		{
+		case 1->{
+			boolean status=order.addNewCustomer();
+			if(status)
+			{
+				System.out.println("data added successfully");
+			}
+			else {
+				System.out.println(" not added");
+			}
+		}
+		case 2->{
+			Map<Customer,List<Item>>m=order.displayAll();
+			Set<Customer>keys=m.keySet();
+			keys.forEach(c->System.out.println(c+" ---"+m.get(c)));
+		}
+		case 3->{
+			boolean status=order.deleteCustomer();
+			if(status)
+			{
+				System.out.println("delete successfully");
+			}
+			else {
+				System.out.println("not found");
+			}
+		}
+		}
+	}while(choice!=4);
+
+	}
+
+}

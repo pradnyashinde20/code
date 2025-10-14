@@ -1,0 +1,67 @@
+package com.service;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
+
+import com.beans.Customer;
+import com.beans.Item;
+import com.dao.OrderDao;
+import com.dao.OrderDaoImpl;
+
+public class OrderServiceImpl implements OrderService {
+private OrderDao odao;
+
+	public OrderServiceImpl() {
+	super();
+	odao =new OrderDaoImpl();
+}
+
+	@Override
+	public boolean addNewCustomer() {
+	Scanner sc=new Scanner(System.in);
+	System.out.println("enter the id:");
+	int id=sc.nextInt();
+	System.out.println("enter the name:");
+	String name=sc.nextLine();
+	sc.next();
+	System.out.println("enter the mobile no:");
+	String mob=sc.next();
+	Customer c=new Customer(id,name,mob);
+	List<Item>lst=new ArrayList<>();
+	String ans=null;
+	do {
+		System.out.println("enter the id:");
+		int lid=sc.nextInt();
+		System.out.println("enter the name:");
+		String na=sc.nextLine();
+		sc.next();
+		System.out.println("enter qty");
+		int q=sc.nextInt();
+		System.out.println("enter the price:");
+		double pri=sc.nextDouble();
+		Item i=new Item(lid,na,q,pri);
+		lst.add(i);
+		System.out.println("do you want to continue");
+		ans=sc.next();
+	}while(ans.equals("y"));
+	
+	
+	
+		return odao.save(c,lst);
+	}
+
+	@Override
+	public Map<Customer, List<Item>> displayAll() {
+		// TODO Auto-generated method stub
+		return odao.display();
+	}
+
+	@Override
+	public boolean deleteCustomer(id) {
+		// TODO Auto-generated method stub
+		return odao.removeCustomer(id);
+	}
+
+}

@@ -1,0 +1,25 @@
+package fun.Interface;
+
+public class Testinterface {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+ A a=new A();
+ a.compare(10, 20);
+Functional_interface.m();
+a.m1();
+//using annonymous class
+Functional_interface f=new Functional_interface() {
+	public int compare(int a,int b) {
+	
+		System.out.println("addition is:"+(a+b));
+	return 0;
+	}};
+	f.compare(10, 20);
+
+	//using lambda function
+	Functional_interface ob=(c,b)->{System.out.println("result is:"+(c+b));return 0;};
+	
+	
+}
+}

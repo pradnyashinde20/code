@@ -1,0 +1,44 @@
+package com.demo.service;
+import com.demo.beans.*;
+import com.demo.dao.EmployeeDao;
+import com.demo.dao.EmployeeDaoImpl;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
+import java.util.Set;
+
+public class EmployeeServiceImpl implements EmployeeService {
+   Scanner sc = new Scanner(System.in);
+   
+   private EmployeeDao edao;
+   
+   public EmployeeServiceImpl() {
+	   super();
+	   this.edao=new EmployeeDaoImpl();
+   }
+   
+	@Override
+	public boolean addNewEmployee() {
+		System.out.println("enter employee id");
+		int id = sc.nextInt();
+		System.out.println("enter employee name");
+		String nm = sc.next();
+		System.out.println("enter employee salary");
+		double sal = sc.nextDouble();
+		System.out.println("enter date of joining");
+		String date = sc.next();
+		LocalDate dt = LocalDate.parse(date,DateTimeFormatter.ofPattern("dd/mm//yyyy"));
+		
+		Employee e = new Employee(id,nm,sal,dt);
+		
+		return edao.save(e);
+	}
+
+	@Override
+	public Set<Employee> displayAll() {
+		// TODO Auto-generated method stub
+		return edao.displayAllEmp();
+	}
+
+}

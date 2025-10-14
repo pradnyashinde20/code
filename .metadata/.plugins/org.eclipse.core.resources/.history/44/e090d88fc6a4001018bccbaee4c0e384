@@ -1,0 +1,13 @@
+package com.service;
+
+import com.dao.EmployeeDao;
+import com.dao.EmployeeDaoImpl;
+
+public class EmployeeServiceImpl implements EmployeeService {
+	private EmployeeDao edao;
+	public EmployeeServiceImpl()
+	{
+		edao=new EmployeeDaoImpl();
+	}
+
+}

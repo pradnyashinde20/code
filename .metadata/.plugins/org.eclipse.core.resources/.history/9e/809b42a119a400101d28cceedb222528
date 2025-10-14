@@ -1,0 +1,19 @@
+package com.service;
+import com.bean.*;
+public class Studentservice {
+	static Student arr[];
+	static int cnt;
+	 static {
+		 arr=new Student[5];
+		 arr[0]=new Student(01,"priya",89);
+		 arr[1]=new Student(02,"riya",78);
+		 cnt=2;
+		 for(Student s:arr) {
+		 System.out.println(s);}
+	}
+	 public void addNewStudent(int arr[])
+	 {
+		 
+	 }
+}
+

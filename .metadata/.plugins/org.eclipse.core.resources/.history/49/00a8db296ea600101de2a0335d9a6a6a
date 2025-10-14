@@ -1,0 +1,32 @@
+package com.demo.dao;
+
+import java.util.List;
+import java.util.Set;
+
+import com.demo.beans.Employee;
+
+public interface EmployeeDao {
+
+	boolean save(Employee e);
+
+	Set<Employee> displayAllEmp();
+
+	Employee searchById(int id);
+
+	Set<Employee> searchByName(String nm);
+
+	boolean updateSalEmp(int id, double sal);
+
+	boolean removeById(int id);
+
+	boolean removeBySal(double sal);
+
+	List<Employee> sortByNameEmp();
+
+	List<Employee> searchSalary(double sal);
+
+	List<Employee> sortBySalary();
+
+
+
+}

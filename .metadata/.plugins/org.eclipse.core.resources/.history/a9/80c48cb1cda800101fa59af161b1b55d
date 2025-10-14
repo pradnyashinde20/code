@@ -1,0 +1,15 @@
+package com.demo.service;
+
+import java.util.Map;
+
+public interface CourseService {
+
+	boolean addNewCourse();
+
+	Map<String, Integer> displayAll();
+
+	int findByCourseName(String cname);
+
+	boolean modifyCourseCapcity(String cname, int ncap);
+
+}

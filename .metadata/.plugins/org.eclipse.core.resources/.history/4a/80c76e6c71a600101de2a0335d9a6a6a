@@ -1,0 +1,20 @@
+package com.test;
+
+import java.util.Scanner;
+
+public class StudentTest {
+
+	public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	int choice;
+	do {
+		System.out.println("welcome to our website");
+		System.out.println("1.add new student\n 2.display all student\n 3.find student  id");
+		System.out.println("4.find student name\n 5.find student marks\n 6.update student mark");
+		System.out.println("7.update name\n 8.delete student name\\n 9.delete student mark\n");
+		System.out.println("");
+	}
+
+	}
+
+}

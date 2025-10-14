@@ -1,0 +1,17 @@
+package com.demo.dao;
+
+import java.util.Set;
+
+import com.demo.beans.Employee;
+
+public interface EmployeeDao {
+
+	boolean save(Employee e);
+
+	Set<Employee> displayAllEmp();
+
+	Employee searchById(int id);
+
+	Set<Employee> searchByName(String nm);
+
+}

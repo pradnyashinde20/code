@@ -1,0 +1,65 @@
+package com.demo.dao;
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
+public class CourseDaoImpl implements CourseDao {
+	 static Map<String,Integer>hm;
+	 static {
+		 hm= new HashMap<>();
+		hm.put("DAC", 100);
+		hm.put("DBDA", 70);
+		hm.put("ML", 150);
+	 }
+
+	@Override
+	public boolean save(String cname, int capacity) {
+	    hm.put(cname, capacity);
+		return true;
+	}
+
+	@Override
+	public Map<String, Integer> findAll() {		
+		return hm;
+	}
+
+	@Override
+	public int serachByName(String cname) {
+      if(hm.containsKey(cname)) {
+      return hm.get(cname);
+      }else {
+    	  return -1;
+      }
+	}
+
+	@Override
+	public boolean modifyCourseCapacity(String cname, int ncap) {
+		if(hm.containsKey(cname)) {
+			hm.put(cname, ncap);
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public Set<String> findByCourseCapacity(int capacity) {
+	Set<String>keys=hm.keySet();
+	Set<String>cname=new HashSet<>();
+	for(String s:keys)
+	{
+		if(hm.get(s)>capacity)
+		{
+			cname.add(s);
+		}
+	}
+	if(cname.size()>0)
+	{
+		return cname;
+	}
+		return null;
+	}
+	 
+	
+}

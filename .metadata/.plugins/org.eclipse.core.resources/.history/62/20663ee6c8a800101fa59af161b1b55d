@@ -1,0 +1,24 @@
+package com.demo.dao;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import com.demo.beans.Course;
+
+public class CourseDaoImpl implements CourseDao {
+	 static Map<String,Integer>hm;
+	 static {
+		 hm= new HashMap<>();
+		hm.put("DAC", 100);
+		hm.put("DBDA", 70);
+		hm.put("ML", 150);
+	 }
+
+	@Override
+	public boolean save(String cname, int capacity) {
+	    hm.put(cname, capacity);
+		return true;
+	};
+	 
+	
+}

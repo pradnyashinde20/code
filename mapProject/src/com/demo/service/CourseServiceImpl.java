@@ -1,0 +1,87 @@
+package com.demo.service;
+
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Scanner;
+import java.util.Set;
+
+import com.demo.beans.Course;
+import com.demo.dao.CourseDao;
+import com.demo.dao.CourseDaoImpl;
+
+public class CourseServiceImpl implements CourseService{
+	Scanner sc = new Scanner(System.in);
+     private CourseDao cdao;
+     public CourseServiceImpl() {
+    	 this.cdao=new CourseDaoImpl();
+     }
+     
+	@Override
+	public boolean addNewCourse() {
+		System.out.println("enter course name");
+		String cname = sc.next();
+		System.out.println("enter course capacity");
+		int capacity = sc.nextInt();
+		return cdao.save(cname, capacity);
+		
+		
+	}
+
+	@Override
+	public Map<String, Integer> displayAll() {
+		
+		return cdao.findAll();
+	}
+
+	@Override
+	public int findByCourseName(String cname) {
+		
+		return cdao.serachByName(cname);
+	}
+
+	@Override
+	public boolean modifyCourseCapcity(String cname, int ncap) {
+		
+		return cdao.modifyCourseCapacity(cname,ncap);
+	}
+
+	@Override
+	public Set<String> findByCapacity(int capacity) {
+		// TODO Auto-generated method stub
+		return cdao.findByCourseByCapacity(capacity);
+	}
+
+	@Override
+	public boolean modifyCourseName(String ocname, String ncname) {
+		
+		return cdao.modifyCourseName(ocname,ncname);
+	}
+
+	@Override
+	public Map<String, Integer> sortByName() {
+		
+		return cdao.sortByName();
+	}
+
+	@Override
+	public Set<Entry<String, Integer>> sortByCapacity() {
+		
+		return cdao.sortByCapacity();
+	}
+
+	@Override
+	public boolean deleteByName(String cname) {
+		
+		return cdao.deleteByCourseName(cname);
+	}
+
+	@Override
+	public boolean deleteByCapacity(int capacity) {
+		// TODO Auto-generated method stub
+		return cdao.deleteByCourseCapacity(capacity);
+	}
+
+
+	
+
+}

@@ -1,0 +1,19 @@
+package com.service;
+
+import com.dao.StudentDao;
+import com.dao.StudentDaoImpl;
+
+public class StudentServiceImpl implements StudentService{
+	private StudentDao edao;
+	public StudentServiceImpl()
+	{
+		edao=new StudentDaoImpl();
+	}
+
+	@Override
+	public boolean addNewStudent() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

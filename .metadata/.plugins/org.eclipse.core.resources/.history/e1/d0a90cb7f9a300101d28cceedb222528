@@ -1,0 +1,17 @@
+package com.Interface;
+
+public class A {
+	private int a;
+	public final void m1()
+	{
+		System.out.println("this is class a meyhod");
+	}
+
+}
+class B extends A{
+	public void m1() {
+		System.out.println("this method extend from class a");
+		
+	}
+	
+}

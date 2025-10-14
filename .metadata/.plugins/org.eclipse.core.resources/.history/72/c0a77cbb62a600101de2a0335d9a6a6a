@@ -1,0 +1,87 @@
+package com.demo.dao;
+
+import java.time.LocalDate;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import java.util.stream.Collectors;
+
+import com.demo.beans.Employee;
+
+public class EmployeeDaoImpl implements EmployeeDao {
+   static  Set<Employee>eset;
+   static {
+	   eset=new HashSet<>();
+	   eset.add(new Employee(101,"shivam", 50000,LocalDate.of(2023, 04, 02)));
+	   eset.add(new Employee(102,"raju", 20000,LocalDate.of(2025, 04, 12)));
+	   eset.add(new Employee(103,"manik", 35000,LocalDate.of(2023, 12, 10)));
+	   eset.add(new Employee(104,"shantaram", 45000,LocalDate.of(2012, 05, 07)));
+	   
+   }
+   
+	@Override
+	public boolean save(Employee e) {
+		eset.add(e);
+		return true;
+	}
+
+	@Override
+	public Set<Employee> displayAllEmp() {
+	  
+		return eset;
+	}
+
+	@Override
+	public Employee searchById(int id) {
+		for(Employee e : eset) {
+			if(e.getEid()==id) {
+				return e;
+			}
+		}
+		return null;
+	}
+
+	@Override
+	public Set<Employee> searchByName(String nm) {
+	   Set<Employee>es=eset.stream().filter(e->e.    getEname().equals(nm)).collect(Collectors.toSet());
+	if(es.size()>0) {
+		return es;
+	}
+	return null;
+	}
+
+	@Override
+	public boolean updateSalEmp(int id, double sal) {
+		Employee e = searchById(id);
+		if(e!=null) {
+			e.setSal(sal);
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public boolean removeById(int id) {
+	  
+		return eset.remove(new Employee(id));
+	}
+
+	@Override
+	public boolean removeBySal(double sal) {
+	
+		return eset.removeIf(e->e.getSal()>sal);
+	}
+
+	@Override
+	public List<Employee> sortByNameEmp() {
+		Comparator<Employee> c=(o1,o2)->{
+			return o1.getEname().compareTo(o2.getEname())
+		}
+		return null;
+	}
+
+
+
+}

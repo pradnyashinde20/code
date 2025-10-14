@@ -1,0 +1,32 @@
+package com.demo.dao;
+
+import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
+
+import com.demo.beans.Employee;
+
+public class EmployeeDaoImpl implements EmployeeDao {
+   static  Set<Employee>eset;
+   static {
+	   eset=new HashSet<>();
+	   eset.add(new Employee(101,"shivam", 50000,LocalDate.of(2023, 04, 02)));
+	   eset.add(new Employee(102,"raju", 20000,LocalDate.of(2025, 04, 12)));
+	   eset.add(new Employee(103,"manik", 35000,LocalDate.of(2023, 12, 10)));
+	   eset.add(new Employee(104,"shantaram", 45000,LocalDate.of(2012, 05, 07)));
+	   
+   }
+   
+	@Override
+	public boolean save(Employee e) {
+		eset.add(e);
+		return true;
+	}
+
+	@Override
+	public Set<Employee> displayAllEmp() {
+	  
+		return eset;
+	}
+
+}

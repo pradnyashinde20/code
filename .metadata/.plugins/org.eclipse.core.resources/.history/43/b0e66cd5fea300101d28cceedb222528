@@ -1,0 +1,13 @@
+package com.Interface;
+
+public class Testinterface {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+int compare(int a,int b)
+{
+	
+}
+	}
+
+}

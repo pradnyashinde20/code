@@ -1,0 +1,62 @@
+package com.demo.test;
+
+import java.util.List;
+import java.util.Scanner;
+
+import com.demo.beans.Student;
+import com.demo.service.StudentService;
+import com.demo.service.StudentServiceImpl;
+
+
+
+public class TestStudent {
+
+	public static void main(String[] args) {
+     Scanner sc = new Scanner(System.in);
+     StudentService studservice = new StudentServiceImpl();
+     int choice=0;
+     do {
+    	 System.out.println("1. add new student\n2. display all student\n3. find student by id");
+    	 System.out.println("4. find student by name\n5. find student by marks\n6. delete student by id");
+    	 System.out.println("7. sort by marks1\n8. sort by name\n choice:");
+    	 choice = sc.nextInt();
+    	 switch(choice) {
+    	 case 1->{
+    		 boolean status =studservice.addNewStudent();
+    		 if(status) {
+    			 System.out.println("student added successfully!!");
+    		 }else {
+    		 System.out.println(" not added");
+    		 }
+    	 }
+    	 case 2->{
+    		 List<Student>list = studservice.displayAll(); 
+    			 list.forEach(System.out::println);
+    		 }
+    	 
+    	 case 3->{
+    		 System.out.println("enter id");
+    		 int id = sc.nextInt();
+    		 Student s = studservice.findById(id);
+    		 if(s!=null) {
+    			 System.out.println(s);
+    		 }else {
+    			 System.out.println("not found");
+    		 }
+    	 	}
+    	 case 4->{
+    		 System.out.println("enter name");
+    		 String name = sc.next();
+    		 List<Student>lst  = studservice.findByName(name);
+    		 if(lst!=null) {
+    			 
+    		 }
+    	 }
+    	 
+    	 }
+     }while(choice!=10);
+   
+
+	}
+
+}

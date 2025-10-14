@@ -1,0 +1,10 @@
+package fun.Interface;
+
+public class Testinterface {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+ A a=new A();
+ a.compare(10, 20);
+	}
+}

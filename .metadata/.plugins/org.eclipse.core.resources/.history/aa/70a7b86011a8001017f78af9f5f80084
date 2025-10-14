@@ -1,0 +1,30 @@
+package com.service;
+
+import java.util.Scanner;
+
+import com.beans.Customer;
+import com.dao.OrderDao;
+import com.dao.OrderDaoImpl;
+
+public class OrderServiceImpl implements OrderService {
+private OrderDao odao;
+
+	public OrderServiceImpl(OrderDao odao) {
+	super();
+	this.odao =new OrderDaoImpl();
+}
+
+	@Override
+	public boolean addNewCustomer() {
+	Scanner sc=new Scanner(System.in);
+	System.out.println("enter the id:");
+	int id=sc.nextInt();
+	System.out.println("enter the name:");
+	String name=sc.nextLine();
+	System.out.println("enter the mobile no:");
+	String mob=sc.next();
+	Customer c=new Customer(id,name,mob);
+		return odao.save(c);
+	}
+
+}

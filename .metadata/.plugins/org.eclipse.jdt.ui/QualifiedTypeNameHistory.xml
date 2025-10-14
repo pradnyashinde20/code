@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.util.stream.Stream"/>
+    <fullyQualifiedTypeName name="Array2DService"/>
+    <fullyQualifiedTypeName name="Book.Lesson"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="com.demo.service.EmployeeService"/>
+    <fullyQualifiedTypeName name="fun.Interface.A"/>
+    <fullyQualifiedTypeName name="com.bean.Student"/>
+    <fullyQualifiedTypeName name="com.dao.EmployeeDao"/>
+    <fullyQualifiedTypeName name="com.dao.EmployeeDaoImpl"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="com.bean.Employee"/>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="java.text.ParseException"/>
+    <fullyQualifiedTypeName name="com.demo.dao.StudentDao"/>
+    <fullyQualifiedTypeName name="com.demo.dao.StudentDaoImpl"/>
+    <fullyQualifiedTypeName name="com.demo.beans.Student"/>
+    <fullyQualifiedTypeName name="java.time.format.DateTimeFormatter"/>
+    <fullyQualifiedTypeName name="com.demo.dao.EmployeeDao"/>
+    <fullyQualifiedTypeName name="com.demo.dao.EmployeeDaoImpl"/>
+    <fullyQualifiedTypeName name="java.util.HashSet"/>
+    <fullyQualifiedTypeName name="com.demo.beans.Employee"/>
+    <fullyQualifiedTypeName name="java.util.stream.Collector"/>
+    <fullyQualifiedTypeName name="java.util.stream.Collectors"/>
+    <fullyQualifiedTypeName name="com.dao.StudentDao"/>
+    <fullyQualifiedTypeName name="com.beans.Student"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="com.dao.OrderDao"/>
+    <fullyQualifiedTypeName name="com.dao.OrderDaoImpl"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.beans.Item"/>
+    <fullyQualifiedTypeName name="com.service.OrderServiceImpl"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="com.demo.dao.CourseDao"/>
+    <fullyQualifiedTypeName name="com.demo.dao.CourseDaoImpl"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="java.util.Set"/>
+    <fullyQualifiedTypeName name="java.util.Comparator"/>
+    <fullyQualifiedTypeName name="java.util.Map.Entry"/>
+    <fullyQualifiedTypeName name="java.util.Iterator"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,17 @@
+package com.Interface;
+
+public class InterfaceDemo {
+
+	 public static void main(String args[])
+	 {
+		 B b=new B();
+		 b.m1();
+		 b.m2(10,20);
+		 A.m4();
+		 System.out.println(b.no);
+	 }
+	 
+	// Functional_interface.m();
+	
+}
+

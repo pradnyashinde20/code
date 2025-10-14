@@ -1,0 +1,18 @@
+package Test;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.bean.Employee;
+
+public class TestArrayList {
+
+	public static void main(String[] args) {
+	List<Employee> elist=new ArrayList<>();
+		elist=new ArrayList<>();
+		elist.add(new Employee(01,"riya",45000,LocalDate.of(2023,04,12)));
+		elist.add(new Employee(02," nitu",50000,LocalDate.of(2024,04,12)));
+	}
+
+}

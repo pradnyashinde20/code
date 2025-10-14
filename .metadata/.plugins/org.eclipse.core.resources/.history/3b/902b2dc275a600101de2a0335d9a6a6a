@@ -1,0 +1,13 @@
+package com.dao;
+
+import com.beans.Student;
+
+public class StudentDaoImpl implements StudentDao{
+
+	@Override
+	public boolean save(Student s) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

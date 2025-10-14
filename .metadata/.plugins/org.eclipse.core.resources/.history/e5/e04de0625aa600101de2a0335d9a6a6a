@@ -1,0 +1,40 @@
+package com.demo.test;
+import com.demo.beans.Employee;
+import com.demo.service.*;
+import java.util.Scanner;
+import java.util.Set;
+
+public class TestEmployee {
+
+	public static void main(String[] args) {
+		EmployeeService eservice = new EmployeeServiceImpl();
+		Scanner sc = new Scanner(System.in);
+		int choice=0;
+		do {
+		 System.out.println("1. add new employee\n2. display all employee\n3. find employee by id");
+		 System.out.println("4. find employee by name\n5. update salary\n6. delete by id");
+		 System.out.println("7. delete by salary\n8. search by salary\n9. sort by salary");
+		 System.out.println("10. sort by name\n11. sort by id\n12. exit\nchoice->>>");
+		 switch(choice) {
+		 case 1->{
+			 boolean status = eservice.addNewEmployee();
+			 if(status) {
+				 System.out.println("employee added successfully");
+			 }else {
+				 System.out.println("not added");
+			 }
+		 }	 
+		 case 2->{	 
+			 Set<Employee> eset = eservice.displayAll();
+			 if(eset!=null) {
+				 eset.forEach(System.out::println);
+			 }else {
+				 System.out.println("employee not found!");
+			 }
+		 }
+		 
+		 }
+		}while(choice!=13);
+	}
+
+}

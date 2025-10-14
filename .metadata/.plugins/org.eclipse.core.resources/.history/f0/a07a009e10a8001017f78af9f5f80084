@@ -1,0 +1,18 @@
+package com.dao;
+
+import java.util.List;
+import java.util.Map;
+
+import com.beans.Customer;
+import com.beans.Item;
+
+public class OrderDaoImpl implements OrderDao{
+
+	 static Map<Customer,List<Item>>list;
+	@Override
+	public boolean save(Customer c) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

@@ -1,0 +1,21 @@
+package com.Interface;
+
+public class InterfaceDemo {
+
+	 public static void main(String args[])
+	 {
+		 B b=new B();
+		 b.m1();
+		 b.m2();
+		 System.out.println(b.no);
+	 }
+	 Functional_interface ob=new Functional_interface();
+	 Functional_interface.m();
+	 public int compare(int a,int b)
+	 {
+		 System.out.println("this is method");
+		 return 0;
+	 };
+	
+}
+

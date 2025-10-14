@@ -1,0 +1,72 @@
+package com.demo.dao;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import com.demo.beans.Student;
+
+public class StudentDaoImpl implements StudentDao{
+   static List<Student> slist;
+   static {
+	   slist=new ArrayList<>();
+	   
+	   slist.add(new Student("shivam",50,60));
+	   slist.add(new Student("shashank",80,45));
+	   slist.add(new Student("raju",55,75));
+   }
+	@Override
+	public boolean save(Student s) {
+	      slist.add(s);
+		return true;
+	}
+	@Override
+	public List<Student> findAll() {
+		return slist;
+	
+	}
+	@Override
+	public Student searchById(int id) {
+		int pos =slist.indexOf(new Student(id));
+		if(pos!=-1) {
+			return slist.get(pos);
+		}
+		return null;
+		
+	}
+	@Override
+	public List<Student> searchByName(String name) {
+		List<Student>lsn = slist.stream().filter(sn->sn.getSname().equals(name))
+				.collect(Collectors.toList());
+		if(lsn.size()>0) {
+			return lsn;
+		}
+		return null;
+	}
+	@Override
+	public List<Student> searchByMarks(int m) {
+		List<Student>list = slist.stream().filter(s->s.getMarks1()>m)
+				.collect(Collectors.toList());
+		if(list.size()>0) {
+			return list;
+		}
+		return null;
+	}
+	@Override
+	public boolean removeById(int id) {
+		
+		return slist.remove(new Student(id));
+	}
+	@Override
+	public List<Student> sortByMarks1() {
+		List<Student>lst = new ArrayList<>();
+		for(Student s : slist) {
+			lst.add(s);
+		}
+		lst.sort(null);
+		return lst;
+	}
+
+
+	
+}

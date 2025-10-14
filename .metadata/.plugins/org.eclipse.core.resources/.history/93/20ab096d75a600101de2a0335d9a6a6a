@@ -1,0 +1,32 @@
+package com.service;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
+
+import com.dao.StudentDao;
+import com.dao.StudentDaoImpl;
+
+public class StudentServiceImpl implements StudentService{
+	private StudentDao edao;
+	public StudentServiceImpl()
+	{
+		edao=new StudentDaoImpl();
+	}
+
+	@Override
+	public boolean addNewStudent() {
+	Scanner sc=new Scanner(System.in);
+	System.out.println("enter the id:");
+	int id=sc.nextInt();
+	System.out.println("enter the name:");
+	String name=sc.next();
+	System.out.println("enter the marks:");
+	int m=sc.nextInt();
+	System.out.println("enter the date:");
+	String date=sc.next();
+	LocalDate dt=LocalDate.parse(date,DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+	return edao.save(e);
+	}
+
+}

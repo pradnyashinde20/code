@@ -1,0 +1,32 @@
+package com.demo.test;
+import java.util.*;
+
+import com.demo.beans.*;
+
+public class TestEmployee {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("1. salried emploeee \n2. contract employee");
+		int choice = sc.nextInt();
+		Employee e1 = null;
+		Employee e2 = null;
+		switch(choice) {
+		case 1:
+			e1=new SalariedEmp("Rajan",new Date(2000,04,23),"HR","Designer",88888);
+	    	e2=new SalariedEmp("Arti",new Date(2000,04,23),"UX","Designer",99999);
+			break;
+			
+		case 2:
+			e1=new ContractEmp("Mugdha",new Date(2000,04,23),"HR","Designer",80,3000);
+	    	e2=new ContractEmp("Tanaya",new Date(2000,04,23),"UX","Designer",80,4000);
+	    	break;
+	    	
+	    default :
+	    	System.out.println("Thank you for visiting");
+	    	break;
+		}
+
+	}
+
+}

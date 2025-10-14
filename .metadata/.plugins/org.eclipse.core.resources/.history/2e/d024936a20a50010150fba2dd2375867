@@ -1,0 +1,64 @@
+package com.demo.beans;
+
+public class Student implements Comparable {
+static int cnt;
+static {
+	cnt=0;
+}
+private int sid;
+private String sname;
+private int marks1;
+private int marks2;
+public Student() {
+	super();
+	cnt++;
+	sid=cnt;
+}
+public Student( String sname, int marks1, int marks2) {
+	super();
+	cnt++;
+	this.sid = cnt;
+	this.sname = sname;
+	this.marks1 = marks1;
+	this.marks2 = marks2;
+}
+public Student(int id) {
+	this.sid=id;
+}
+
+public boolean equals(Object ob) {
+	System.out.println("in equals method...");
+	return this.sid ==((Student)ob).sid;
+}
+public int getSid() {
+	return sid;
+}
+
+public String getSname() {
+	return sname;
+}
+public void setSname(String sname) {
+	this.sname = sname;
+}
+public int getMarks1() {
+	return marks1;
+}
+public void setMarks1(int marks1) {
+	this.marks1 = marks1;
+}
+public int getMarks2() {
+	return marks2;
+}
+public void setMarks2(int marks2) {
+	this.marks2 = marks2;
+}
+@Override
+public String toString() {
+	return "Student [sid=" + sid + ", sname=" + sname + ", marks1=" + marks1 + ", marks2=" + marks2 + "]";
+}
+
+public int compareTo(Student ob) {
+	return (int)(this.marks1-ob.marks1);
+}
+
+}

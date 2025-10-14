@@ -1,0 +1,58 @@
+package com.demo.service;
+
+import java.util.List;
+import java.util.Scanner;
+
+import com.demo.beans.Student;
+import com.demo.dao.StudentDao;
+import com.demo.dao.StudentDaoImpl;
+
+public class StudentServiceImpl implements StudentService {
+	private StudentDao studDao;
+	public StudentServiceImpl() {
+		studDao = new StudentDaoImpl();
+	}
+	
+	@Override
+	public boolean addNewStudent() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("enter name");
+		String nm = sc.next();
+		System.out.println("enter marks 1");
+		int m1 = sc.nextInt();
+		System.out.println("enter marks 2");
+		int m2 = sc.nextInt();
+		Student s = new Student(nm,m1,m2);
+		
+		return studDao.save(s);
+	}
+
+	@Override
+	public List<Student> displayAll() {
+		
+		return studDao.findAll();
+	}
+
+	@Override
+	public Student findById(int id) {
+		
+		return studDao.searchById(id);
+	}
+
+	@Override
+	public List<Student> findByName(String name) {
+		
+		return studDao.searchByName(name);
+	}
+
+	@Override
+	public List<Student> findByMarks(int m) {
+		
+		return studDao.searchByMarks(m);
+	}
+
+
+
+
+
+}

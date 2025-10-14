@@ -1,0 +1,14 @@
+package com.dao;
+
+import java.util.List;
+
+import com.beans.Customer;
+import com.beans.Item;
+
+public interface OrderDao {
+
+	
+
+	boolean save(Customer c, List<Item> lst);
+
+}

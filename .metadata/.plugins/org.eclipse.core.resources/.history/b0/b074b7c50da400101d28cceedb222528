@@ -1,0 +1,10 @@
+package strings;
+
+public class StringDemo {
+String s1="test";
+String s2="test";
+String s3=s2;
+String s4=new String("test");
+s1="welcome";
+
+}

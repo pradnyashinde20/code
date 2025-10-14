@@ -1,0 +1,11 @@
+package com.Interface;
+
+public class Functional_interface {
+	int compare(int a,int b);
+	public static void m()
+	{
+		System.out.println("this is normal method");
+	}
+
+}
+

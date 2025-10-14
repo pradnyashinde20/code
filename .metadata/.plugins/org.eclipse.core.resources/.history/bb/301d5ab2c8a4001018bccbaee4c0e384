@@ -1,0 +1,35 @@
+package com.service;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
+
+import com.bean.Employee;
+import com.dao.EmployeeDao;
+import com.dao.EmployeeDaoImpl;
+
+public class EmployeeServiceImpl implements EmployeeService {
+	private EmployeeDao edao;
+	public EmployeeServiceImpl()
+	{
+		edao=new EmployeeDaoImpl();
+	}
+public boolean addNewEmployee()
+{
+	Scanner sc=new Scanner(System.in);
+	System.out.println("enter the id:");
+	int id=sc.nextInt();
+	System.out.println("enter the name:");
+	String name=sc.nextLine();
+	sc.next();
+	System.out.println("enter the salary");
+	
+	double sal=sc.nextDouble();
+	System.out.println("enter the date:");
+	String d=sc.next();
+	LocalDate dt= LocalDate.parse(d,DateTimeFormatter.ofPattern("dd/mm/yyyy"));
+	Employee e=new Employee(id,name,sal,dt);
+	
+return edao.save(e);
+}
+}

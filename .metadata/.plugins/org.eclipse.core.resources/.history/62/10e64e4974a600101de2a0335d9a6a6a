@@ -1,0 +1,11 @@
+package com.beans;
+
+import java.time.LocalDate;
+
+public class Student {
+	private int id;
+	private String name;
+	private int marks;
+	private LocalDate d;
+
+}

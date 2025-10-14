@@ -1,0 +1,16 @@
+package fun.Interface;
+public interface Functional_interface {
+	 int compare(int a,int b);
+	public static void m()
+	{
+		System.out.println("this is normal method");
+	}
+
+}
+
+class A implements Functional_interface{
+	public int compare(int a,int b)
+	{
+		
+	}
+}

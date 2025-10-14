@@ -1,0 +1,37 @@
+package com.test;
+
+import java.util.Scanner;
+
+import com.service.OrderService;
+import com.service.OrderServiceImpl;
+
+public class OrderTest {
+
+	public static void main(String[] args) {
+		
+		Scanner sc=new Scanner(System.in);
+		int choice=0;
+		OrderService order=new OrderServiceImpl();
+		
+	do {
+		System.out.println("1.add new customer\n 2.display all \n 3.delete customer");
+		System.out.println("choice>>");
+		choice=sc.nextInt();
+		switch(choice)
+		{
+		case 1->{
+			boolean status=order.addNewCustomer();
+			if(status)
+			{
+				System.out.println("data added successfully");
+			}
+			else {
+				System.out.println(" not added");
+			}
+		}
+		}
+	}while(choice!=4);
+
+	}
+
+}
