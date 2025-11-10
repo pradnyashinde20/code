@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #outputtable{
+            border-collapse: collapse;
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+<body>
+    Enter your ID: <input type="number" id="numinp"><br>
+    Enter Title: <input type="text" id="txt"><br>
+    <button onclick="display()">display</button><br><br>
+    <table id="outputtable" border="2"></table>
+
+    <script>
+        function display(){
+            let num = parseInt(document.getElementById("numinp").value);
+            let title = document.getElementById("txt").value;
+
+            let table=document.getElementById("outputtable");
+
+            let row= document.createElement("tr");
+            row.innerHTML=`<td>${num}</td><td>${title}</td>`;   
+            table.appendChild(row);
+            clear();
+        }
+
+        function clear(){
+          document.getElementById("numinp").value = "";
+            document.getElementById("txt").value = "";
+        }
+     
+    </script>
+    
+    
+</body>
+</html>

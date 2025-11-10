@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    enter the value:<input type="number" id="t" ><br>
+    enter the value:<input type="number" id="t1" ><br>
+    <p id="p">result:</p>
+    <button onclick="add()">+</button>&nbsp;
+    <button onclick="sub()">-</button>&nbsp;
+    <button onclick="mul()">*</button>&nbsp;
+    <button onclick="div()">/</button>&nbsp;
+
+    <script>
+        function add()
+        {
+            let a=parseInt(document.getElementById("t").value)
+            let b=parseInt(document.getElementById("t1").value)
+           document.getElementById("p").innerHTML=a+b;
+           // document.write(c);
+
+        }
+         function sub()
+        {
+            let a=parseInt(document.getElementById("t").value)
+            let b=parseInt(document.getElementById("t1").value)
+            let c=document.getElementById("t").innerHTML=a-b;
+            document.write(c);
+        }
+         function mul()
+        {
+            let a=parseInt(document.getElementById("t").value)
+            let b=parseInt(document.getElementById("t1").value)
+            let c=document.getElementById("t").innerHTML=a*b;
+            document.write(c);
+        }
+         function div()
+        {
+            let a=parseInt(document.getElementById("t").value)
+            let b=parseInt(document.getElementById("t1").value)
+            let c=document.getElementById("t").innerHTML=a/b;
+            document.write(c);
+        }
+    </script>
+
+</body>
+</html>

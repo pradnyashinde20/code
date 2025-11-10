@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+        <h1>Promise Object</h1>
+        <h2>the then() method</h2>
+        <button onclick="call()">Display</button>
+        <p id="para"></p>
+
+
+
+        <script>
+            function myfunction(some){
+                document.getElementById("para").innerHTML=some;
+            }
+
+            let data = "sample";
+            function call(){
+                let mypromise = new Promise(function(resolve,reject){
+                    let x=0;
+                    if(x==0){
+                        data = "ok from function";
+                        resolve(data);
+                    }else{
+                        console.log("error");
+                    }
+                })
+   
+            mypromise.then(
+                function(value){
+                    console.log("in then");
+                    myfunction(value);
+                },
+                function(error){
+                    console.log("error in then")
+                }
+            );
+        };  
+        </script>
+
+</body>
+</html>

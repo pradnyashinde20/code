@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculator with Callback</title>
+</head>
+<body>
+
+  <h2>Simple Calculator</h2>
+  <label>Enter First Number: </label>
+  <input type="number" id="n1"><br><br>
+
+  <label>Enter Second Number: </label>
+  <input type="number" id="n2"><br><br>
+
+  <label>Select Operation:</label>
+  <select id="operation">
+    <option value="add">Addition</option>
+    <option value="sub">Subtraction</option>
+    <option value="mul">Multiplication</option>
+    <option value="div">Division</option>
+  </select><br><br>
+
+  <button onclick="perform()">Calculate</button>
+
+  <p id="result"></p>
+
+  <script>
+    // 1. Display function
+    function display(result) {
+      //document.getElementById("result").innerText = "Result: " + result;
+      document.getElementById("result").innerHTML="result"+result;
+    }
+
+    // 2. Addition
+    function addition(n1, n2, callback) {
+      let res = n1 + n2;
+      callback(res);
+    }
+
+    // 3. Subtraction
+    function subtraction(n1, n2, callback) {
+      let res = n1 - n2;
+      callback(res);
+    }
+
+    // 4. Multiplication
+    function multiply(n1, n2, callback) {
+      let res = n1 * n2;
+      callback(res);
+    }
+
+    // 5. Division
+    function division(n1, n2, callback) {
+      if (n2 === 0) {
+        callback("Cannot divide by zero");
+      } else {
+        let res = n1 / n2;
+        callback(res);
+      }
+    }
+
+    // 6. Calculate – accepts numbers and operation as a callback
+    function calculate(n1, n2, mcallback) {
+      mcallback(n1, n2, display); // third arg is callback to display result
+    }
+
+    // Triggered on button click
+    function perform() {
+      let n1 = parseFloat(document.getElementById("n1").value);
+      let n2 = parseFloat(document.getElementById("n2").value);
+      let op = document.getElementById("operation").value;
+
+      if (isNaN(n1) || isNaN(n2)) {
+        display("Please enter valid numbers");
+        return;
+      }
+
+      switch (op) {
+        case "add":
+          calculate(n1, n2, addition);
+          break;
+        case "sub":
+          calculate(n1, n2, subtraction);
+          break;
+        case "mul":
+          calculate(n1, n2, multiply);
+          break;
+        case "div":
+          calculate(n1, n2, division);
+          break;
+        default:
+          display("Invalid operation selected");
+      }
+    }
+  </script>
+
+</body>
+</html>

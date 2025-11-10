@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="d">
+    <label>first name</label>
+    <input type="text" id="fname"><br><br>
+    <label>last name</label>
+    <input type="text" id="lname"><br><br>
+    <button onclick="display()" id="b">display</button>
+    
+    <table id="t">
+<thead><tr><th>first name</th><th>last name</th></tr></thead>
+    </table>
+    <script>
+        function display(){
+            let f=document.getElementById("fname").value;
+            let l=document.getElementById("lname").value;
+           // return document.getElementById("").innerHTML=f+" "+l;
+           let c=document.getElementById("D").innerHTML=f+""+l;
+           //console.log("values are:"+c);
+        }
+    </script>
+    </div>
+</body>
+</html>

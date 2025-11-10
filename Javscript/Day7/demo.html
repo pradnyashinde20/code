@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        #d{
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            background-color: aqua;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("#d").mouseover(function(){
+                $("#d").css("background-color",'pink');
+            })
+              $("#d").mouseout(function(){
+                $("#d").css("background-color",'aqua');
+            })
+    
+        })
+    </script>
+</head>
+<body>
+    <div id="d"></div>
+</body>
+</html>

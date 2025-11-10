@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Scrolling Quote Animation</title>
+<style>
+  body {
+    background: #f0f8ff;
+    font-family: 'Georgia', serif;
+    overflow-x: hidden;
+    margin: 50px;
+  }
+  #quote {
+    position: absolute;
+    white-space: nowrap;
+    font-size: 2rem;
+    color: #2c3e50;
+    font-style: italic;
+    font-weight: 600;
+  }
+  #container {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    border: 2px solid #2c3e50;
+    background: #ecf0f1;
+  }
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div id="quote">“The only limit to our realization of tomorrow is our doubts of today.” – Franklin D. Roosevelt</div>
+  </div>
+
+<script>
+$(document).ready(function() {
+  const $quote = $('#quote');
+  const $container = $('#container');
+
+  const containerWidth = $container.width();
+  const quoteWidth = $quote.width();
+
+  // Initial position: start fully outside left
+  $quote.css({ left: -quoteWidth });
+
+  let leftToRightCount = 0;
+  const maxLeftToRight = 4;
+
+  function animateLeftToRight() {
+    $quote.animate(
+      { left: containerWidth },
+      4000,
+      'linear',
+      function() {
+        leftToRightCount++;
+        if (leftToRightCount < maxLeftToRight) {
+          // Reset position to left outside container and run again
+          $quote.css({ left: -quoteWidth });
+          animateLeftToRight();
+        } else {
+          // After 4 times left to right, start right to left
+          animateRightToLeft();
+        }
+      }
+    );
+  }
+
+  function animateRightToLeft() {
+    $quote.css({ left: containerWidth }); // Start outside right
+    $quote.animate(
+      { left: -quoteWidth },
+      4000,
+      'linear',
+      function() {
+        // Optionally, repeat or stop here
+        // For demo, repeat right to left indefinitely
+        animateRightToLeft();
+      }
+    );
+  }
+
+  animateLeftToRight();
+});
+</script>
+
+</body>
+</html>

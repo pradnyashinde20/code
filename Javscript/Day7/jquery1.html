@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        #div1{
+            background-color: blueviolet;
+            height: 50px;
+            width: 50px;
+            position: absolute;
+        }
+    </style>
+   
+    <script>
+        $(document).ready(function(){
+          $("#btn").click(function(){
+            $("#div1").animate({left:'250px'});
+
+        });
+    })
+    </script>
+</head>
+<body>
+    <div id="div1"></div><br><br><br><br>
+     <button id="btn">move</button>
+    
+</body>
+</html>

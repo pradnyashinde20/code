@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+        <script>
+       $(document).ready(function(){
+          $("#btn").click(function(){
+         let a=$("#t").val();
+
+         let c = "<table border = 2><thead><tr><th>"+"multiplication"+"</th><th>"+"Result"+"</th>></tr></thead>"+
+            "<tr><td>"+a+" * "+"1"+"</td><td>"+ a*1+"</td></tr>"+
+                    "<tr><td>"+a+" * "+"2"+"</td><td>"+ a*2+"</td></tr>"+
+                       "<tr><td>"+a+" * "+"3"+"</td><td>"+ a*3+"</td></tr>"+
+                          "<tr><td>"+a+" * "+"4"+"</td><td>"+ a*4+"</td></tr>"+
+                             "<tr><td>"+a+" * "+"5"+"</td><td>"+ a*5+"</td></tr></table>";
+
+                $("button").after(c);
+
+
+        })
+       })
+
+        
+    </script>
+</head>
+<body>
+ 
+     Enter Number:
+    <input type="number" id="t">
+    <button id="btn">display</button><br><br>
+
+</body>
+</html>

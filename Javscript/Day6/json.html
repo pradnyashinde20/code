@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            background-color: cornflowerblue;
+        }
+
+        #outputtable{
+            border-collapse: collapse;
+            background-color: rgb(103, 163, 126);
+            width: 100%;
+    
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <label>First Name</label>
+    <input type="text" name="fname" id="fname"><br><br>
+    <label>Last Name</label>
+    <input type="text" name="lname" id="lname"><br><br>
+    <label>Age</label>
+    <input type="number" name="age" id="age"><br><br>
+    
+    <button onclick="myfunction()">Show</button><br><br>
+</div>
+    <table id="outputtable" border="2">
+        <thead><tr><td>First Name</td><td>Last Name</td><td>Age</td></tr></thead>
+    </table>
+
+      <pre id="jsonDisplay"></pre>
+    <script>
+        function myfunction()
+        {
+           
+            let fname=document.getElementById("fname").value;
+            let lname=document.getElementById("lname").value;
+            let age=document.getElementById("age").value;
+            
+
+            const data ={
+                fname:fname,
+                lname:lname,
+                age:age
+            };
+           const jsonData = JSON.stringify(data);
+
+         
+            document.getElementById("jsonDisplay").textContent=jsonData;
+      
+             let table = document.getElementById("outputtable");
+             let newrow = table.insertRow(table.rows.length);
+
+          newrow.insertCell(0).innerHTML = data.fname;
+           newrow.insertCell(1).innerHTML = data.lname;
+            newrow.insertCell(2).innerHTML = data.age;
+
+           
+            clearinput();        
+            
+        }
+        function clearinput(){
+                  let fname=document.getElementById("fname").value="";
+            let lname=document.getElementById("lname").value="";
+            let age=document.getElementById("age").value="";
+        }
+    </script>
+</body>
+</html>

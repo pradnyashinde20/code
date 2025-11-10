@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Multiplication Table Generator</h2>
+
+    <form id="form1">
+        Enter Number <input type="number" id="numInput"><br><br>
+        <button type="submit">Show Table</button>
+
+    </form><br>
+    <div id="tablecontainer"></div>
+</body>
+<script>
+    const form = document.getElementById("form1");
+    const tablecontainer = document.getElementById("tablecontainer");
+
+    form.onsubmit = function(event){
+        event.preventDefault();
+
+        const numinput = parseInt(document.getElementById("numInput").value);
+        if(isNaN(numinput)){
+            tablecontainer.innerHTML="please enter the number for multiplication!!"
+        }
+        if(numinput){
+        let tableHTML =`<table border="2">`
+        tableHTML+= `<tr><th>multiplier</th><th>result</th></tr>`
+
+        for(let i=1;i<=10;i++){
+            tableHTML += `<tr><td>${numinput} X ${i}</td><td>${numinput*i}</td></tr>`
+        }
+        tableHTML+=`</table>`
+        tablecontainer.innerHTML=tableHTML;
+    }
+    }
+</script>
+</html>

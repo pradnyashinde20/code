@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="display()">display</button>
+    <table id="outputtable" border="2"></table>
+
+    <script>
+        function display()
+        {
+            let req=new XMLHttpRequest();
+            req.open("get","https://jsonplaceholder.typicode.com/posts",true);
+            req.send();
+            req.onload=function()
+            {
+                if(req.status===200){
+                    
+                    let data = JSON.parse(req.responseText);
+                    console.log(data);
+                    let table = document.getElementById("outputtable");
+                    
+                    data.forEach(element => {
+                        let row = document.createElement("tr");
+                        row.innerHTML=`<td>${element.id}</td><td>${element.title}</td>`
+                        table.appendChild(row);
+                    });
+                }
+            }
+        }
+    </script>
+    
+    
+</body>
+</html>

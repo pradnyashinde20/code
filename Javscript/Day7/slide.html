@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+       <style>
+        #div1{
+            height: 100px;
+            width:100px;
+            position: absolute;
+            background-color: aqua;
+        }
+       </style>
+
+       <script>
+        $(document).ready(function(){
+            $("#btn").click(function(){
+                // $("#div1").slideUp(2000);
+                // $("#div1").slideDown(2000);
+                $("#div1").slideToggle(2000);
+              
+            
+            })
+        })
+       </script>
+</head>
+<body>
+    <div id="div1"></div><br><br><br><br><br><br>
+    <button id="btn">Slide Me</button>
+</body>
+</html>

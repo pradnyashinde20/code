@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>timer</h1>
+    <p>time interval is:</p>
+    <p id="p"></p>
+    <script>
+        setInterval(date, 1000);
+        function date()
+        {
+            let d = new Date();
+            document.getElementById("p").innerHTML= d.getHours() + ":" +
+  d.getMinutes() + ":" +
+  d.getSeconds();
+        }
+    </script>
+    
+</body>
+</html>

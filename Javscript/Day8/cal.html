@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Calculator with jQuery</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .calculator {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      width: 300px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      font-size: 2rem;
+      padding: 10px;
+      margin-bottom: 20px;
+      text-align: right;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    button {
+      font-size: 1.5rem;
+      padding: 15px;
+      border: none;
+      border-radius: 5px;
+      background: #eee;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button.operator {
+      background: #f9a825;
+      color: white;
+    }
+
+    button.clear {
+      background: #e53935;
+      color: white;
+    }
+
+    button:hover {
+      background: #ccc;
+    }
+
+    button.operator:hover {
+      background: #f57f17;
+    }
+
+    button.clear:hover {
+      background: #b71c1c;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="calculator">
+    <input type="text" id="display" readonly />
+
+    <div class="buttons">
+      <button class="clear" id="clear">C</button>
+      <button class="operator" data-op="/">÷</button>
+      <button class="operator" data-op="*">×</button>
+      <button class="operator" data-op="-">−</button>
+
+      <button class="num">7</button>
+      <button class="num">8</button>
+      <button class="num">9</button>
+      <button class="operator" data-op="+">+</button>
+
+      <button class="num">4</button>
+      <button class="num">5</button>
+      <button class="num">6</button>
+      <button id="equals" style="grid-row: span 2; background: #43a047; color: white;">=</button>
+
+      <button class="num">1</button>
+      <button class="num">2</button>
+      <button class="num">3</button>
+
+      <button class="num" style="grid-column: span 2;">0</button>
+      <button class="num">.</button>
+    </div>
+  </div>
+
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      let expression = '';
+
+      function updateDisplay() {
+        $('#display').val(expression);
+      }
+
+      // When number or decimal point buttons are clicked
+      $('.num').click(function() {
+        const value = $(this).text();
+
+        // Avoid multiple decimals in the current number
+        if (value === '.') {
+          // Split expression by operators to check last number part
+          const parts = expression.split(/[\+\-\*\/]/);
+          const lastNumber = parts[parts.length - 1];
+          if (lastNumber.includes('.')) {
+            return; // prevent adding second decimal point
+          }
+        }
+
+        expression += value;
+        updateDisplay();
+      });
+
+      // When operator buttons are clicked
+      $('.operator').click(function() {
+        const op = $(this).data('op');
+
+        if (expression === '') {
+          // Don't allow operator as first character except minus (for negative)
+          if (op === '-') {
+            expression = '-';
+            updateDisplay();
+          }
+          return;
+        }
+
+        // Prevent multiple operators in a row
+        if (/[+\-*/]$/.test(expression)) {
+          // Replace last operator with new operator
+          expression = expression.slice(0, -1) + op;
+        } else {
+          expression += op;
+        }
+        updateDisplay();
+      });
+
+      // Clear button
+      $('#clear').click(function() {
+        expression = '';
+        updateDisplay();
+      });
+
+      // Equals button
+      $('#equals').click(function() {
+        if (expression === '') return;
+
+        // If last character is operator, remove it
+        if (/[+\-*/]$/.test(expression)) {
+          expression = expression.slice(0, -1);
+        }
+
+        try {
+          // Evaluate expression safely using Function constructor
+          // (Better than eval because of scope isolation)
+          const result = Function('"use strict";return (' + expression + ')')();
+          expression = result.toString();
+          updateDisplay();
+        } catch (e) {
+          $('#display').val('Error');
+          expression = '';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

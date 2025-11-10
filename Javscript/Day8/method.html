@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <style>
+        .divv{
+            background-color: aqua;
+            position: absolute;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function(){
+            $("#div1").mouseover(function(){
+                $("#div1").addClass("divv");
+            })
+            $("#div1").mouseout(function(){
+                $("#div1").removeClass("divv");
+            })
+            $("#div1").click(function(){
+                $("#div1").toggleClass("divv");
+            })
+        })
+    </script>
+    
+</head>
+<body>
+    <div id="div1" >This is Div 1</div><br>
+    <div id="div2">This is Div 2</div>
+</body>
+</html>

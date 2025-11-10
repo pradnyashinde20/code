@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count Click</title>
+   
+    <style>
+    </style>
+</head>
+<body> 
+    <h3>Display Count</h3><br>
+    <button onclick="addcount()" id="btn">count</button>
+    <p id="p1"></p>
+
+    <script>
+         
+        function count(){
+            let cnt=0;
+               return function(){
+                let btn1 = document.getElementById("btn");
+                 cnt+=1;
+                
+                  if(cnt==10){
+                  //  btn1.style.visibility ='hidden';
+                  btn1.disabled = true;
+                  }
+                  return cnt;
+            
+             }       
+        }
+          const add=count();
+
+        function addcount(){
+            document.getElementById("p1").innerHTML=add();
+            }
+           
+    </script>
+   
+</body>
+</html>

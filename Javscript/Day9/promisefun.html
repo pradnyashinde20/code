@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="d"></div>
+        <script>
+        function display(some)
+        {
+            document.getElementById("d").innerHTML=some;
+        }
+            let p=new Promise((resolve,reject)=> {
+            let x=1;
+            if(x==0)
+        {
+            console.log("ok")
+            reslove();
+        }
+        else{
+            console.log("error")
+        }
+          });
+        p.then(
+            function(value){
+                console.log("then ok");
+            },
+            function(error)
+            {
+console.log("then error")
+            }
+        )
+
+    </script>
+</body>
+</html>

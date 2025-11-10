@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    <style>
+       #p1{
+        visibility: hidden;
+       }
+       #p2{
+        visibility: hidden;
+       }
+    </style>
+     
+</head>
+<body>
+    
+    <form onsubmit="return validate()">
+        Enter Username <input type="text" name="username" id="name"><br>
+        <p  id="p1">Username Cannot be empty...Enter Username</p><br><br>
+        Enter Password <input type="password" name="password" id="pass"><br>
+        <p  id="p2">Password cannot be empty.. Enter Password</p><br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+   <script>
+
+        function validate(){
+        const name = document.getElementById("name").value.trim();
+        const pass = document.getElementById("pass").value.trim();
+        // const nameerror = document.getElementById("p1");
+        // const passerror = document.getElementById("p2");
+           let valid = true;
+
+        if(name ===""){
+        //    nameerror.style.visibility = 'visible';
+           document.getElementById("p1").style.visibility='visible';
+           valid =false;
+        }
+        
+        if(pass ===""){
+        //    passerror.style.visibility = 'visible';
+            document.getElementById("p2").style.visibility='visible';
+            valid=false;
+        }
+        return valid;
+       };
+    </script>
+
+</body>
+</html>

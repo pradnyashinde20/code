@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Array operations using buttons</h2>
+    <button type="button" id="btn1" onclick="addAtStart()">add at start</button><br><br>
+     <button type="button" id="btn2" onclick="addAtEnd()">add at end</button><br><br>
+      <button type="button" id="btn3"onclick="deleteFromEnd()">delete from end</button><br><br>
+       <button type="button" id="btn4" onclick="deleteFromStart()">delete from start</button><br><br>
+        <button type="button" id="btn5" onclick="oddNum()">display odd numbers</button><br><br>
+         <button type="button" id="btn6" onclick="evenNum()">display even numbers</button><br><br>
+             <button type="button" id="btn7" onclick="displayArray()">display array</button>
+    
+         <script>
+            let arr =[];
+            function addAtStart(){
+                arr.unshift(23);
+            }
+            function addAtEnd(){
+                arr.push(30);
+            }
+            function deleteFromStart(){
+                arr.shift();
+            }
+            function deleteFromEnd(){
+                arr.pop();
+            }
+            function oddNum(){
+                for(let i=0;i<arr.length;i++){
+                    if(arr[i]%2!=0){
+                        console.log(arr[i]);
+                    }
+                }
+            }
+              function evenNum(){
+                for(let i=0;i<arr.length;i++){
+                    if(arr[i]%2==0){
+                        console.log(arr[i]);
+                    }
+                }
+            }
+            function displayArray(){
+              console.log(arr);
+                }
+            
+            
+         </script>
+
+</body>
+</html>
