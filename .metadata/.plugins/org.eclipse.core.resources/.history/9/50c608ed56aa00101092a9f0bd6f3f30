@@ -1,0 +1,22 @@
+package com.test;
+
+import com.beans.Info;
+import com.beans.Mythread;
+
+public class TestMultithread {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+Info f=new Info();
+Mythread m1=new Mythread(f);
+m1.start();
+Mythread m2=new Mythread(f);
+m2.start();
+Mythread m3=new Mythread(f);
+m3.start();
+Mythread m4=new Mythread(10,4,f);
+m4.start();
+
+	}
+
+}

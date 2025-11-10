@@ -1,0 +1,22 @@
+package com.test;
+
+import java.util.Scanner;
+
+import com.service.EmployeeService;
+import com.service.EmployeeServiceImpl;
+
+public class TestEmployee {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+Scanner sc=new Scanner(System.in);
+EmployeeService es=new EmployeeServiceImpl();
+int choice=0;
+do {
+	System.out.println("1.add new employee \n 2.display all\n choice:");
+	choice=sc.nextInt();
+}while(choice!=3);
+
+	}
+
+}

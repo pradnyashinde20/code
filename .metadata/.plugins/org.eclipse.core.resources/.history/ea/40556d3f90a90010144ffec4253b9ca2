@@ -1,0 +1,35 @@
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+
+public class TestStreamFunctions {
+
+	public static void main(String[] args) {
+		List<Integer> lst= List.of(23,12,45,67,34,11,34);
+		Optional<Integer>maxnum = lst.stream().max(Integer::compare);
+		System.out.println(maxnum.get());
+		
+		Optional<Integer> minnum = lst.stream().min(Integer::compare);
+		System.out.println(minnum.get());
+		
+		Optional<Integer>maxoddnum = lst.stream().filter(e->e%2!=0).max(Integer::compare);
+		System.out.println(maxoddnum.get());
+		
+		Optional<Integer>num=lst.stream().filter(e->e>5).findFirst();
+		if(num.isPresent()) {
+			System.out.println(num.get());
+	
+		}	
+		
+		List<Integer>slist=lst.stream().map(e->e*e).collect(Collectors.toList());
+		System.out.println(slist);
+		
+		lst.stream().filter(e->e>5 && e%2==0).forEach(System.out::println);
+		
+		
+		List<String>list2 = List.of("hello","welcome","testing","check","happy");
+	    System.out.println(list2.stream().reduce((acc,str)->acc.length()>str.length()?acc:str)); 
+	}
+
+}

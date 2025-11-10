@@ -1,0 +1,14 @@
+import java.util.List;
+import java.util.Optional;
+
+public class TestStreamFunctions {
+
+	public static void main(String[] args) {
+		List<Integer> lst= List.of(23,12,45,67,34,11,34);
+		Optional<Integer>maxnum = lst.stream().max(Integer::compare);
+		System.out.println(maxnum.get());
+		
+
+	}
+
+}

@@ -1,0 +1,14 @@
+package com.exception;
+
+public class WrongNumberException extends Exception{
+
+	public WrongNumberException(String message) {
+		super(message);
+		// TODO Auto-generated constructor stub
+	}
+
+	
+	}
+	
+
+

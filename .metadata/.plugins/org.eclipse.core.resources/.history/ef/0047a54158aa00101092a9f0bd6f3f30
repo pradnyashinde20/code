@@ -1,0 +1,9 @@
+package com.beans;
+
+public class Info2 {
+	public void multi(int n1,int n2)
+	{
+		System.out.println("multiplication is:"+n1*n2);
+	}
+
+}

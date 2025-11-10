@@ -1,0 +1,40 @@
+package com.test;
+
+import java.util.Scanner;
+
+import com.bean.Employee;
+import com.exception.NegativeSalaryException;
+import com.service.ExceptionService;
+
+public class ExceptionTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+Scanner sc=new Scanner(System.in);
+ExceptionService exception=new ExceptionService();
+Employee e=new Employee();
+exception.acceptData();
+System.out.println(e.toString());
+
+
+for(int i=0;i<3;i++)
+{
+	try {
+		System.out.println("enter the salary:");
+		double sal=sc.nextDouble();
+		if(sal<0)
+		{
+			throw new NegativeSalaryException("salary cannot be negative");
+		}
+		System.out.println("salary:"+sal);
+		break;
+	}
+	catch(NegativeSalaryException e)
+			 {
+		System.out.println(e.getMessage());
+	}
+	
+}
+	}
+
+}

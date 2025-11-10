@@ -1,0 +1,35 @@
+package com.beans;
+
+public class Mythread extends Thread{
+private int n;
+private int n2;
+private Info o;
+
+public Mythread( Info o) {
+	super();
+
+	this.o = o;
+}
+
+public Mythread(int n, int n2, Info o) {
+	super();
+	this.n = n;
+	this.n2 = n2;
+	this.o = o;
+}
+
+@Override
+public void run() {
+	// TODO Auto-generated method stub
+	int ans=o.factorial();
+	
+	System.out.println("factorial is:"+ans);
+	
+	o.table();
+	int ans1=o.add();
+	System.out.println("addition:"+ans1);
+	
+	o.multi(10,4);
+}
+
+}

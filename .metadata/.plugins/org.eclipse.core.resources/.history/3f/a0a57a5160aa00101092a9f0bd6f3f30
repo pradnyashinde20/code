@@ -1,0 +1,40 @@
+package com.service;
+
+import java.util.List;
+import java.util.Scanner;
+
+import com.beans.Employee;
+import com.dao.EmployeeDao;
+import com.dao.EmployeeDaoImpl;
+
+public class EmployeeServiceImpl implements EmployeeService{
+private EmployeeDao edao;
+
+public EmployeeServiceImpl() {
+	super();
+	edao=new EmployeeDaoImpl();
+}
+
+@Override
+public boolean addNewEmployee() {
+	// TODO Auto-generated method stub
+	Scanner sc=new Scanner(System.in);
+	System.out.println("enter the id: ");
+	int id=sc.nextInt();
+	System.out.println("enter the name: ");
+	String name=sc.next();
+	System.out.println("enter the desgination: ");
+	String desg=sc.next();
+	System.out.println("enter the salary: ");
+	double sal=sc.nextDouble();
+	Employee e=new Employee();
+	return edao.save(e);
+}
+
+@Override
+public List<Employee> displayEmp() {
+	// TODO Auto-generated method stub
+	return edao.displayAll();
+}
+
+}

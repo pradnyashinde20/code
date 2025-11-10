@@ -1,0 +1,12 @@
+package com.beans;
+
+public class Info {
+	public int factorial()
+	{
+		int fact=1;
+		int num=4;
+		for(int i=1;i<=num;i++)
+		fact=fact*i;
+	}
+
+}

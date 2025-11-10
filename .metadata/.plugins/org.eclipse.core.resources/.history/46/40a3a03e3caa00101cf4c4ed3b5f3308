@@ -1,0 +1,43 @@
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+
+public class BufferedInputStreams {
+
+	public static void main(String[] args) {
+		File f=new File("first.txt");
+		BufferedOutputStream bos=null;
+		try {
+		 if(f.exists())
+		 {
+			 bos=new BufferedOutputStream(new FileOutputStream(f,true));
+		 }
+		 else {
+			 bos=new BufferedOutputStream(new FileOutputStream(f));
+		 }
+		}
+		catch(FileNotFoundException e)
+		{
+			e.printStackTrace();
+		}
+		try(BufferedInputStream  bi= new BufferedInputStream(new FileInputStream("first.txt"));
+				BufferedOutputStream bo=bos){
+			int i=bi.read();
+			while(i!=-1)
+			{
+				bos.write(i);
+				i=bi.read();
+			}
+			
+		}
+		catch(FileNotFoundException e)
+		{
+			e.printStackTrace();
+		}
+
+	}
+
+}

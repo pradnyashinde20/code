@@ -1,0 +1,15 @@
+package com.service;
+
+import java.util.List;
+
+import com.beans.Employee;
+
+public interface EmployeeService {
+
+	boolean addNewEmployee();
+
+	List<Employee> displayEmp();
+
+	Employee findById(int id);
+
+}

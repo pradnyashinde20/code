@@ -1,0 +1,15 @@
+import java.util.List;
+import java.util.Optional;
+
+public class Collectioncode {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+List <Integer>lst=List.of(23,44,56,67,78,90);
+Optional <Integer>max=lst.stream().max(Integer::compare);
+System.out.println(max.get());
+Optional<Integer>min=lst.stream().min(Integer::compare);
+System.out.println(min.get());
+	}
+
+}

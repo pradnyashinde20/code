@@ -1,0 +1,37 @@
+package com.beans;
+
+public class Info {
+	public int factorial()
+	{
+		int fact=1;
+		int num=4;
+		for(int i=1;i<=num;i++)
+		fact=fact*i;
+		return fact;
+	}
+	public void  table()
+	{
+		int no=4;
+		int result=0;
+		for(int i=1;i<=10;i++)
+		{
+			 result=no*i;
+			 System.out.println(" table "+no+" is "+i+" :: " +result);
+			
+		}
+		 
+	}
+	public int add()
+	{
+		int num1=10;
+		int num2=20;
+		int res=num1+num2;
+		return res;
+	}
+	public void multi(int n1,int n2)
+	{
+		System.out.println("multiplication is:"+n1*n2);
+	}
+
+
+}

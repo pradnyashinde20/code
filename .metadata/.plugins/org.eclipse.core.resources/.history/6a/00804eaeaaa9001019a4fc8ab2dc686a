@@ -1,0 +1,25 @@
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
+public class Collectioncode {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+List <Integer>lst=List.of(4,3,2,23,44,56,67,78,90);
+Optional <Integer>max=lst.stream().max(Integer::compare);
+System.out.println(max.get());
+Optional<Integer>min=lst.stream().min(Integer::compare);
+System.out.println(min.get());
+max=lst.stream().filter(e->e%2!=0).max(Integer::compare);
+System.out.println(max.get());
+Optional<Integer>op=lst.stream().filter(e->e<5).findFirst();
+if(op.isPresent())
+{
+	System.out.println("value less than 5 is:"+op.get());
+};
+List<Integer>l= lst.stream().map(e->e*e).collect((Collectors.toList()));
+System.out.println(l);
+Optional<Integer>l=lst.stream().reduce((acc,str)->acc.length()>str.length()?acc:str);
+	}
+}

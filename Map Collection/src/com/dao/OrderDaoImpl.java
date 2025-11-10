@@ -40,9 +40,8 @@ public class OrderDaoImpl implements OrderDao{
 
 	@Override
 	public boolean removeCustomer(int  id) {
-		// TODO Auto-generated method stub
-		List
-		return 
+	
+		return false;
 		
 	}
 

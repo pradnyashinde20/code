@@ -1,0 +1,20 @@
+
+public class TestEnum1 {
+
+	public static void main(String[] args) {
+	TestEnum te = TestEnum.large;
+	switch(te) {
+	case small->{
+		System.out.println("small selected :"+te.getSize()+"...."+te.getPrice());
+	}
+	case medium->{
+		System.out.println("small selected :"+te.getSize()+"...."+te.getPrice());
+	}
+	case large->{
+		System.out.println("small selected :"+te.getSize()+"...."+te.getPrice());
+	}
+	}
+
+	}
+
+}

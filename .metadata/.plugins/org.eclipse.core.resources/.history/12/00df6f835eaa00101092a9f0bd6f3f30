@@ -1,0 +1,35 @@
+package com.test;
+
+import java.util.Scanner;
+
+import com.service.EmployeeService;
+import com.service.EmployeeServiceImpl;
+
+public class TestEmployee {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+Scanner sc=new Scanner(System.in);
+EmployeeService es=new EmployeeServiceImpl();
+int choice=0;
+do {
+	System.out.println("1.add new employee \n 2.display all\n choice:");
+	choice=sc.nextInt();
+	switch(choice)
+	{
+	case 1->{
+		boolean status=es.addNewEmployee();
+		if(status)
+		{
+			System.out.println("added successfully");
+		}
+		else {
+			System.out.println("not added");
+		}
+	}
+	}
+}while(choice!=3);
+
+	}
+
+}

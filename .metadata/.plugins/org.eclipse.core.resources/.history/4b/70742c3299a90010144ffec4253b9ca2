@@ -1,0 +1,28 @@
+package com.file;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class FileHandling1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+try{
+	FileInputStream fis=new FileInputStream("first.txt");
+
+		FileOutputStream fos=new FileOutputStream("firstcopy.txt");
+		
+			int i=fis.read();
+			while(i!=-1)
+			{
+				fos.write(i);
+				i=fis.read();
+		}
+		
+	}catch(IOException e)
+{
+			System.out.println("file not found");
+}
+	}
+
+}

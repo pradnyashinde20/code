@@ -1,5 +1,0 @@
-package com.service;
-
-public class Studentservice {
-Student arr[]=new Student[10];
-}

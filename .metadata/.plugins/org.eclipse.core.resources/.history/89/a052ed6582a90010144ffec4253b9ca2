@@ -1,0 +1,28 @@
+package com.test;
+
+import java.util.Scanner;
+
+import com.exception.WrongNumberException;
+
+public class CustomException {
+
+	public static void main(String[] args) throws WrongNumberException {
+		// TODO Auto-generated method stub
+Scanner sc=new Scanner(System.in);
+int num=45;
+do {
+	System.out.println("enter the no:");
+	int no=sc.nextInt();
+	if(no==45)
+	{
+		System.out.println("correct guess");
+		break;
+	}
+	else {
+		if(no<num)
+			throw new WrongNumberException("you enter wrong no");
+	}
+}while(num!=45);
+	}
+
+}

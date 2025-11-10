@@ -1,0 +1,17 @@
+package com.service;
+
+import java.util.Scanner;
+
+import com.bean.Employee;
+import com.exception.NegativeSalaryException;
+
+
+public class ExceptionService {
+	
+public void acceptData()throws NegativeSalaryException{
+Scanner sc=new Scanner(System.in);
+ Employee e=new Employee(1,"priya",45466.00);
+ e.Setsalary(-2000);
+}
+
+}

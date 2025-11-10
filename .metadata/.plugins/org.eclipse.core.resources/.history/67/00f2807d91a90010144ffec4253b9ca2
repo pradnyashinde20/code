@@ -1,0 +1,15 @@
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+
+public class FileHandling1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+try(FileInputStream fis=new FileInputStream("first.txt");
+		FileOutputStream fos=new FileOutputStream("firstcopy.txt"));	
+		{
+			
+		}
+	}
+
+}

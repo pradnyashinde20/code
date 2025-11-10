@@ -1,8 +1,0 @@
-package fun.Interface;
-
-public class Snippet {
-	public static void main(String[] args) {
-		 Functional_interface.m1();
-	}
-}
-
